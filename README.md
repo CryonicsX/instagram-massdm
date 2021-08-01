@@ -78,4 +78,4 @@ If the project helped you, you can support me by giving ⭐️!
 # License
 
 Copyright © 2021 [CRYONICX & REF](https://github.com/CryonicsX)<br />
-This project is [MIT](https://github.com/CryonicsX/Discord-Spammer/blob/main/LICENSE) licensed.
+This project is [MIT](https://github.com/CryonicsX/Hacking-tools/blob/main/LICENSE) licensed.
