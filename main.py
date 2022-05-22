@@ -21,7 +21,7 @@ class color:
 Pass = True
 while Pass: 
     try:
-        mongo = pymongo.MongoClient("mongodb+srv://reflechir:reflechir@cluster0.ducrc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+        mongo = pymongo.MongoClient("")
         cluster = mongo["genlify-next"]
         database = cluster["generators"]
         Pass = False
