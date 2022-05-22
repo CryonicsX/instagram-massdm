@@ -1,0 +1,15 @@
+{
+    "instagram_settings": {
+        "username": "username",
+        "password": "password",
+        "text_message": "Hi Developed by CryonicX."
+    },
+
+    "script_settings": {
+        "license": "a",
+        "use_proxy": true,
+        "proxy_type": "https",
+        "threading": 10,
+        "message_amount": 1
+    }
+}
