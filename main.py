@@ -102,7 +102,7 @@ if __name__ == "__main__":
         time.sleep(2)
         os.system("cls" if os.name == "nt" else "clear")
         print(fr"""{color.GREEN}
-    .__                 __              .___       DEVELOPED BY GENLIFY
+    .__                 __              .___       DEVELOPED BY CRYONICX
     |__| ____   _______/  |______     __| _/_____  
     |  |/    \ /  ___/\   __\__  \   / __ |/     \ 
     |  |   |  \\___ \  |  |  / __ \_/ /_/ |  Y Y  \
