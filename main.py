@@ -18,49 +18,8 @@ class color:
     RESET_ALL = "\033[0m"
     BLUE = '\033[96m'
 
-Pass = True
-while Pass: 
-    try:
-        mongo = pymongo.MongoClient("")
-        cluster = mongo["genlify-next"]
-        database = cluster["generators"]
-        Pass = False
-        print(f'{color.GREEN}[+] Connected to DB.{color.RESET_ALL}')
-    except Exception as err:
-        print(f"{color.RED}Trying to connect DB:{color.RESET_ALL} {err}.")
-        time.sleep(5)
 
 
-def check_license(license_code: str, uuid: str) -> list:
-    data = database.find_one({ "licanseKey": license_code })
-    if data:
-        if data["program_id"] == __PROGRAMID__:
-            if data["version"] == __VERSION__:
-                if data['UUID'] != "NONE":
-                    if data["UUID"] == uuid:
-                        return [True]
-                    else:
-                        return [False, "The program only works on the machine of the person I sold it to :)"]
-                else:
-                    filter = {"UUID": "NONE"}
-                    newValue = {"$set": {"UUID": uuid()}}
-                    database.update_one(filter, newValue)
-                    return [True]
-            else:
-                return[False, "The program has been updated, please download the new version from the site. https://genlify.store/"]
-        else:
-            return [False, "Program id does not match"]
-    else:
-        return [False, "INVALID LICANSE"]
-
-
-def get_uuid() -> str:
-    if os.name == "nt":
-        x = subprocess.check_output('wmic csproduct get UUID')
-        return str(x[4:]).replace(" ", "").replace("\n", "").replace("\r", "").replace("\\r", "").replace("\\n", "") \
-            .replace("b'", "").replace("'", "")
-    else:
-        return False
 
 def user_handler():
     with open("./usernames.txt", encoding="utf-8") as f:
@@ -137,7 +96,6 @@ def start(thread):
 
 if __name__ == "__main__":
     os.system("cls" if os.name == "nt" else "clear")
-    #check = check_license(config['script_settings']["license"], get_uuid())
     check = [True]
     if check[0]:   
         print(f"{color.GREEN}[+] License correct program starting... {color.RESET_ALL}")
